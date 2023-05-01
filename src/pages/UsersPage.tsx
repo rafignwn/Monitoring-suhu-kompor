@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import TableUser, { InterfaceUserData } from "../components/TableUser";
+import TableUser from "../components/TableUser";
 import { onSnapshot, collection, query } from "firebase/firestore";
 import { store } from "../firebase";
 import { Toaster } from "react-hot-toast";
+import { TUser } from "../contexts/AuthContext";
 
 export default function UsersPage() {
-  const [users, setUsers] = useState<Array<object | InterfaceUserData>>([]);
+  const [users, setUsers] = useState<Array<object | TUser>>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {

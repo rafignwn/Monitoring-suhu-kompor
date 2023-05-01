@@ -1,8 +1,8 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import FormInput from "../components/FormInput";
 import { Toaster, toast } from "react-hot-toast";
-import { useNavigate, useParams } from "react-router-dom";
-import { Timestamp, doc, getDoc, updateDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { Timestamp, doc, updateDoc } from "firebase/firestore";
 import { auth, store } from "../firebase";
 import { AuthContext } from "../contexts/AuthContext";
 import {
