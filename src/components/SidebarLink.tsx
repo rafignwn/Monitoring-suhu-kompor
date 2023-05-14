@@ -5,12 +5,14 @@ export type TLink = {
   linkTo: string;
   icon?: JSX.Element;
   notShow?: boolean;
+  handleClose: () => void;
 };
 
 export default function SidebarLink(props: TLink) {
   const location = useLocation();
   return (
     <Link
+      onClick={props.handleClose}
       to={props.linkTo}
       className={`flex items-center ${
         location.pathname == props.linkTo

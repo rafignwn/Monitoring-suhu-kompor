@@ -68,7 +68,7 @@ export const humidityChartConfig: ChartConfiguration<"line", number[], number> =
       scales: {
         y: {
           min: 20,
-          max: 70,
+          max: 100,
           grid: {
             color: colors.amber[200],
           },
@@ -92,7 +92,7 @@ export const humidityChartConfig: ChartConfiguration<"line", number[], number> =
             color: colors.amber[200],
           },
           title: {
-            text: "Jumlah Data",
+            text: "Index Data",
             display: true,
             color: colors.amber[900],
             font: {

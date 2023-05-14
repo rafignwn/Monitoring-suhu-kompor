@@ -50,7 +50,7 @@ export default function MainLayout() {
           show ? "w-56" : "w-0"
         } transition-width duration-200 md:w-56 ease-in-out bg-yellow-600`}
       >
-        <Sidebar />
+        <Sidebar handleClose={() => setShow(false)} />
       </div>
       <main className="overflow-y-auto">
         <div className="content bg-yellow-100 p-3 md:p-8">

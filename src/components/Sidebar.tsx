@@ -16,22 +16,49 @@ import SidebarLink from "./SidebarLink";
 import SidebarButton, { TButton } from "./SidebarButton";
 import { auth } from "../firebase";
 
-export default function Sidebar() {
+export default function Sidebar({ handleClose }: { handleClose: () => void }) {
   const navigation = useNavigate();
   const { dispatch, currentUser } = useContext(AuthContext);
   const notShow: boolean = (currentUser as TUser)?.role !== "admin";
 
   const links: Array<TLink> = [
-    { text: "Dashboard", icon: <HomeTwo size={20} />, linkTo: "/" },
-    { text: "Activity", icon: <ChartLine size={20} />, linkTo: "/activity" },
-    { text: "Notifications", icon: <Remind size={20} />, linkTo: "/notif" },
-    { text: "Edit Profile", icon: <EditName size={20} />, linkTo: "/edit" },
-    { text: "Users", notShow, icon: <Peoples size={20} />, linkTo: "/users" },
+    {
+      text: "Dashboard",
+      icon: <HomeTwo size={20} />,
+      linkTo: "/",
+      handleClose,
+    },
+    {
+      text: "Activity",
+      icon: <ChartLine size={20} />,
+      linkTo: "/activity",
+      handleClose,
+    },
+    // {
+    //   text: "Notifications",
+    //   icon: <Remind size={20} />,
+    //   linkTo: "/notif",
+    //   handleClose,
+    // },
+    {
+      text: "Edit Profile",
+      icon: <EditName size={20} />,
+      linkTo: "/edit",
+      handleClose,
+    },
+    {
+      text: "Users",
+      notShow,
+      icon: <Peoples size={20} />,
+      linkTo: "/users",
+      handleClose,
+    },
     {
       text: "Add User",
       notShow,
       icon: <PeoplePlusOne size={20} />,
       linkTo: "/adduser",
+      handleClose,
     },
   ];
 
@@ -45,6 +72,7 @@ export default function Sidebar() {
         dispatch({ type: "LOGOUT" });
         navigation("/login");
       },
+      handleClose,
     },
   ];
 

@@ -95,7 +95,7 @@ export const temperatureChartConfig: ChartConfiguration<
           color: colors.amber[200],
         },
         title: {
-          text: "Jumlah Data",
+          text: "Index Data",
           display: true,
           color: colors.amber[900],
           font: {
