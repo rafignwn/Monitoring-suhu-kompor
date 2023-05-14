@@ -6,11 +6,12 @@ import gambarAlat from "../assets/alat.jpg";
 
 export default function Dashboard() {
   const [temperature, setTemperature] = useState<number>(0);
+  const [humidity, setHumidity] = useState<number>(0);
 
   useEffect(() => {
-    document.title = "Dashboard - Monitor Suhu";
+    document.title = "Dashboard - Monitor Suhu dan Kelembaban";
 
-    const unsub = onValue(
+    const unsubTemperature = onValue(
       ref(db, "suhu"),
       (snapshot) => {
         const data: Array<number> = snapshot.val();
@@ -21,7 +22,18 @@ export default function Dashboard() {
       }
     );
 
-    return () => unsub();
+    const unsubHumidity = onValue(
+      ref(db, "kelembaban"),
+      (snapshot) => {
+        const data: Array<number> = snapshot.val();
+        setHumidity(data[data.length - 1]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    return () => unsubTemperature();
   }, []);
 
   return (
@@ -61,7 +73,7 @@ export default function Dashboard() {
             <span className="text-3xl mb-4 font-bold text-amber-500">
               Kelembaban
             </span>
-            <p className="text-4xl font-bold text-amber-600 border border-amber-400 bg-white rounded-xl px-6 py-4">{`${56} %`}</p>
+            <p className="text-4xl font-bold text-amber-600 border border-amber-400 bg-white rounded-xl px-6 py-4">{`${humidity} %`}</p>
           </div>
         </div>
       </div>
