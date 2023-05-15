@@ -63,8 +63,7 @@ export default function Login() {
         <div className="flex flex-col items-center md:px-3 md:shadow-lg md:shadow-gray-300 md:self-stretch md:border md:border-amber-700 rounded-xl justify-center">
           <img src={tofuImg} alt="logo" className="mb-10" />
           <h1 className="mb-10 font-semibold text-yellow-700 text-2xl text-center w-96">
-            Sistem Monitoring Suhu dan Kelembaban pada Kompor Pemasak Bubur
-            Ganja
+            Sistem Monitoring Suhu dan Kelembaban pada Kompor Pemasak Tahu
           </h1>
         </div>
         <div className="flex w-fit flex-col items-center bg-amber-600 p-8 rounded-xl shadow-gray-300 shadow-lg">
