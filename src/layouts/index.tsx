@@ -57,7 +57,7 @@ export default function MainLayout() {
           <Outlet />
         </div>
         <footer className="bg-yellow-700 flex items-center px-5 text-yellow-100 font-medium">
-          <h1>&copy; Nama - Nim 🎈 TA 2023</h1>
+          <h1>&copy; Nama & Nama - TA 2023</h1>
         </footer>
       </main>
     </div>

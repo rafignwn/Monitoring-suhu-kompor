@@ -2,6 +2,7 @@ import {
   HomeTwo,
   ChartLine,
   Remind,
+  Data,
   Logout,
   Peoples,
   PeoplePlusOne,
@@ -32,6 +33,12 @@ export default function Sidebar({ handleClose }: { handleClose: () => void }) {
       text: "Activity",
       icon: <ChartLine size={20} />,
       linkTo: "/activity",
+      handleClose,
+    },
+    {
+      text: "Realtime Data",
+      icon: <Data size={20} />,
+      linkTo: "/realtime",
       handleClose,
     },
     // {
@@ -80,7 +87,7 @@ export default function Sidebar({ handleClose }: { handleClose: () => void }) {
     <div className="w-full h-full">
       <h3 className="font-bold text-2xl text-gray-50 h-16 mb-5 flex items-center py-3 px-5">
         <img className="w-10 h-10 mr-3 opacity-75" src={tofu} alt="logo" />
-        <span className="text-red-50 font-mono">TOFU</span>
+        <span className="text-red-50 font-mono">KU-TAHU</span>
       </h3>
       <h5 className="pl-9 text-sm underline text-white tracking-wide font-medium mb-3">
         Menu
