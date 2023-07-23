@@ -16,6 +16,7 @@ import UsersPage from "./pages/UsersPage";
 import AddUserPage from "./pages/AddUserPage";
 import EditUserPage from "./pages/EditUserPage";
 import Realtime from "./pages/Realtime";
+import HistoriData from "./pages/HistoriData";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -50,6 +51,7 @@ function App() {
           <Route path="/activity" element={<Activity />} />
           <Route path="/realtime" element={<Realtime />} />
           <Route path="/notif" element={<Notifications />} />
+          <Route path="/histori" element={<HistoriData />} />
           <Route
             path="/users"
             element={
